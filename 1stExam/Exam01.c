@@ -52,7 +52,7 @@ int main()
     printf("==========================================================\n");
     for (int i = 1; i < 7; i++)
     {
-        printf("Choose: ");
+        printf("Please Choose: ");
         scanf("%d", &op);
         switch (op)
         {
@@ -75,7 +75,7 @@ int main()
             printf("multi: %d\n", s3);
             break;
         case 5:
-            s4 = divi(a, b);
+            s4 = division(a, b);
             printf("Division: %f\n", s4);
             break;
         case 6:
