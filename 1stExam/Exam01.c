@@ -3,82 +3,98 @@
 int sum(int a, int b);
 int sub(int a, int b);
 int multi(int a, int b);
-float division(int a, int b);
+int divi(int a, int b);
+
+int main()
+{
+    int a, b;
+    float s1, s2, s3, s4;
+    int op;
+
+    printf("=========================MENU=========================\n");
+    printf("1. Input Number\n");
+    printf("2. Sumary\n");
+    printf("3. Subsacion\n");
+    printf("4. Multilipcation\n");
+    printf("5. Division\n");
+    printf("6. Exit!\n");
+
+    for (int i = 0; i < 6; i++)
+    {
+        printf("Your choice : ");
+        fflush(stdin);
+        scanf("%d", &op);
+
+        switch (op)
+        {
+        case 1:
+            printf("Enter number A: \n");
+            scanf("%d", &a);
+
+            printf("Enter number B: \n");
+            scanf("%d", &b);
+            break;
+
+        case 2:
+            s1 = sum(a, b);
+            printf("Sum = %f\n", s1);
+            break;
+        case 3:
+            s2 = sub(a, b);
+            printf("Sub = %f\n", s2);
+            break;
+        case 4:
+            s3 = sum(a, b);
+            printf("Multi = %f\n", s3);
+            break;
+        case 5:
+            if (b == 0)
+            {
+                printf("Error\n");
+            }
+            else
+                s4 = div(a, b);
+            printf("Div : %f\n", s4);
+            break;
+        case 6:
+            printf("======================Exit Menu!======================\n");
+            break;
+        }
+    }
+    return 0;
+}
 
 int sum(int a, int b)
 {
     int s1;
     s1 = a + b;
-
     return s1;
 }
+
 int sub(int a, int b)
 {
     int s2;
-
     s2 = a - b;
-
     return s2;
 }
+
 int multi(int a, int b)
 {
     int s3;
-
     s3 = a * b;
-
     return s3;
 }
-float division(int a, int b)
+
+int divi(int a, int b)
 {
-    int s4;
-
-    s4 = a / b;
-
-    return s4;
-}
-
-int main()
-{
-    int a, b;
-    int s1, s2, s3, s4;
-    char op;
-
-    printf("==========================MENU============================\n");
-    printf("sum");
-    printf("sub");
-    printf("multi");
-    printf("division");
-    printf("Out program");
-    printf("==========================================================\n");
-    for (int i = 1; i < 7; i++)
+    float s4;
+    if (b == 0)
     {
-        printf("Please Choose: ");
-        scanf("%d", &op);
-        switch (op)
-        {
-        case 1:
-            printf("Input your num a: ");
-            scanf("%d", &a);
-            printf("input your num b: ");
-            scanf("%d", &b);
-            break;
-        case 2:
-            s1 = sum(a, b);
-            printf("sum: %d\n", s1);
-            break;
-        case 3:
-            s2 = sub(a, b);
-            printf("sub: %d\n", s2);
-            break;
-        case 4:
-            s3 = multi(a, b);
-            printf("multi: %d\n", s3);
-            break;
-        case 5:
-            s4 = division(a, b);
-            printf("Division: %f\n", s4);
-            break;
-        case 6:
-            printf("Out Program.\n");
-        }
+        return 0;
+    }
+    else
+    {
+        s4 = (float)a / b;
+    }
+    return s4;
 }
