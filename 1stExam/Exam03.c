@@ -1,15 +1,24 @@
 #include <stdio.h>
 
+int teenArray(int arr[], int size);
+
 int main()
 {
-    int i, arr[10];
-    for (i = 0; i < 10; i++)
+    int arr[10];
+    printf("Input your element number\n");
+
+    for (int i = 0; i < 10; i++)
     {
-        printf("\nThe value of the th element %d : ", i + 1);
+        printf("\nElement number %d: ", i + 1);
         scanf("%d", &arr[i]);
     }
-    for (i = 10; i > 0; i--)
+    teenArray(arr, 10);
+}
+
+int teenArray(int arr[], int size)
+{
+    for (int i = size - 1; i >= 0; i--)
     {
-        scanf("\n%d", arr[i]);
+        printf("%d\t", arr[i]);
     }
 }
